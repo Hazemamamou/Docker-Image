@@ -1,4 +1,4 @@
-name: Docker Image1 
+name: Docker Image
 
 on:
   push:
@@ -17,9 +17,9 @@ jobs:
     - name: docker login
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PSW}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u $DOCKER_USER -p $DOCKER_PSW
     - name: docker build
       run: | 
         docker image build -t hazemamamou/imageh .
