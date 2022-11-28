@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image
 
 on:
   push:
@@ -22,7 +22,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PSW
     - name: docker build
       run: | 
-       echo "${{ secrets.DOCKER_PSW }}" | docker login -u "hazemamamou" --password-stdin
         docker image build -t hazemamamou/imageh .
     - name: docker push
       run: |
