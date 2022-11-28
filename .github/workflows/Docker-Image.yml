@@ -19,7 +19,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PSW}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PSW
+        docker login -u $DOCKER_USER 'p' $DOCKER_PSW
     - name: docker build
       run: | 
         docker image build -t hazemamamou/imageh .
